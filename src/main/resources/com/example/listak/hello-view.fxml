@@ -1,16 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.listak.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
-
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="655.0" prefWidth="515.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.listak.HelloController">
+   <children>
+      <HBox prefHeight="607.0" prefWidth="600.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fx:id="iv_kitty" fitHeight="90.0" fitWidth="90.0" onMouseClicked="#onKittyClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@kitty.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="l_kittyDb" text="0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fx:id="iv_gomba" fitHeight="90.0" fitWidth="90.0" onMouseClicked="#onGombaClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@gomba.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="l_gombaDb" text="0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fx:id="iv_madar" fitHeight="90.0" fitWidth="90.0" onMouseClicked="#onMadarClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@madar.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="l_madarDb" text="0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_RIGHT" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fx:id="iv_kuka1" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#onKuka1Click" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@kuka.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="15.0" right="10.0" />
+                           </VBox.margin>
+                        </ImageView>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <ListView fx:id="lv_lista1" prefHeight="400.0" prefWidth="150.0" />
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fx:id="iv_add" fitHeight="90.0" fitWidth="90.0" onMouseClicked="#onAddClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@add.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <ImageView fx:id="iv_del" fitHeight="90.0" fitWidth="90.0" onMouseClicked="#onDelClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@del.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_RIGHT" prefHeight="406.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fx:id="iv_kuka2" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#onKuka2Click" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@kuka.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="15.0" right="10.0" />
+                           </VBox.margin>
+                        </ImageView>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <ListView fx:id="lv_lista2" prefHeight="400.0" prefWidth="150.0" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" left="4.0" right="9.0" top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="30.0" style="-fx-background-color: gray;">
+         <children>
+            <VBox alignment="CENTER_LEFT" prefWidth="200.0">
+               <children>
+                  <Label fx:id="l_osszes" prefWidth="150.0" text="0 / 0 elem van a listákban">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER_RIGHT" prefWidth="415.0">
+               <children>
+                  <ImageView fx:id="iv_save" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#onSaveClick" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@save.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
 </VBox>
